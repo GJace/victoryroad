@@ -36,7 +36,7 @@ def listen_for_stop():
     listener.start()
 
 
-def press_key(key, duration=2):
+def press_key(key, duration=3):
     """Press and release a keyboard key"""
     wait_time = humanize(duration)
     print(f"[KEY] Pressing '{key}' (waiting {wait_time:.2f}s after)")
@@ -136,9 +136,9 @@ def start_game():
     # Enter
     press_key("return")
 
-    # Wait 10 seconds (team walking in)
-    print("[START] Waiting 10 seconds (team walking in)...")
-    time.sleep(humanize(10))
+    # Wait 15 seconds (team walking in)
+    print("[START] Waiting 15 seconds (team walking in)...")
+    time.sleep(humanize(15))
 
     # Enter
     press_key("return")
@@ -147,8 +147,8 @@ def start_game():
     press_key("return")
 
     # Click (kickoff)
-    print("[START] Waiting 5 seconds before kickoff...")
-    time.sleep(humanize(5))
+    print("[START] Waiting 8 seconds before kickoff...")
+    time.sleep(humanize(8))
 
     print("[CLICK] Clicking for kickoff")
     pyautogui.click()
@@ -174,8 +174,8 @@ def farm_cycle(cycle_num=1):
         start_game()
 
         # Wait 4 minutes (first half)
-        print("[CYCLE] Waiting 4 minutes for first half...")
-        time.sleep(humanize(240))
+        print("[CYCLE] Waiting 5 minutes for first half...")
+        time.sleep(humanize(300))
 
         # Left click
         print("[CYCLE] Pressing alt to proceed")
@@ -185,15 +185,15 @@ def farm_cycle(cycle_num=1):
         press_key("return")
 
         # Wait 4 minutes (second half)
-        print("[CYCLE] Waiting 4 minutes for second half...")
-        time.sleep(humanize(240))
+        print("[CYCLE] Waiting 5 minutes for second half...")
+        time.sleep(humanize(300))
 
         # Enter
         press_key("return")
 
-        # Wait 5 seconds before screenshot
-        print("[CYCLE] Waiting 5 seconds...")
-        time.sleep(humanize(5))
+        # Wait 10 seconds before screenshot
+        print("[CYCLE] Waiting 10 seconds...")
+        time.sleep(humanize(10))
 
         # Save screenshot
         print("[CYCLE] Saving loot screenshot...")
@@ -203,9 +203,9 @@ def farm_cycle(cycle_num=1):
         # Enter
         press_key("return")
 
-        # Wait 10 seconds
-        print("[CYCLE] Waiting 10 seconds...")
-        time.sleep(humanize(10))
+        # Wait 15 seconds
+        print("[CYCLE] Waiting 15 seconds...")
+        time.sleep(humanize(15))
 
         print(f"[CYCLE {cycle_num}] ✓ Cycle completed successfully!")
         return True
@@ -238,8 +238,8 @@ def main():
                 continue
 
             # Small delay between cycles
-            print("[MAIN] Waiting 5 seconds before next cycle...")
-            time.sleep(5)
+            print("[MAIN] Waiting 6 seconds before next cycle...")
+            time.sleep(6)
 
     except KeyboardInterrupt:
         print("\n[MAIN] ✓ Script stopped cleanly (Ctrl+C)")
